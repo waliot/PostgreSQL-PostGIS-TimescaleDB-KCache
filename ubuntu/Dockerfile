@@ -19,14 +19,14 @@ RUN apt-get install -y locales &&\
 RUN apt-get install -y git cmake libssl-dev &&\
     git clone https://github.com/timescale/timescaledb.git &&\
     cd timescaledb &&\
-    git checkout 1.7.1 &&\
+    git checkout 2.3.0 &&\
     ./bootstrap -DREGRESS_CHECKS=OFF &&\
     cd build &&\
     make &&\
     make install
 
 RUN apt-get install -y autoconf automake libtool curl make g++ unzip libxml2-dev libgeos-dev libproj-dev libgdal-dev libjson-c-dev &&\
-    wget https://download.osgeo.org/postgis/source/postgis-2.5.4.tar.gz &&\
+    wget https://download.osgeo.org/postgis/source/postgis-3.1.4.tar.gz &&\
     tar -xvzf postgis-2.5.4.tar.gz &&\
     cd postgis-2.5.4 &&\
     ./configure &&\
@@ -35,7 +35,7 @@ RUN apt-get install -y autoconf automake libtool curl make g++ unzip libxml2-dev
 
 RUN git clone https://github.com/powa-team/pg_stat_kcache.git &&\
     cd pg_stat_kcache &&\
-    git checkout REL2_1_1 &&\
+    git checkout REL2_2_0 &&\
     make &&\
     make install
 
