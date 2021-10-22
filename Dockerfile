@@ -1,4 +1,4 @@
-FROM timescale/timescaledb-postgis:1.7.1-pg12
+FROM timescale/timescaledb-postgis:2.3.0-pg13
 
 MAINTAINER Ilya Gehrman "gehrman.ilya@gmail.com"
 
@@ -12,7 +12,7 @@ RUN apk update && apk add --no-cache \
 
 RUN git clone https://github.com/powa-team/pg_stat_kcache.git &&\
     cd pg_stat_kcache &&\
-    git checkout REL2_1_1 &&\
+    git checkout REL2_2_0 &&\
     make &&\
     make install
 
